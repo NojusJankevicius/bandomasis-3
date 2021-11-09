@@ -1,0 +1,65 @@
+{
+
+    "Car": [
+        {
+            "id": "1",
+            "brand": "opel",
+            "model": "žopel",
+            "year": "2000",
+            "fuelTypes": "electric",
+            "price": {
+                "amount": 600,
+                "currency": "€"
+            },
+            "imgSrc": "https://www.kiubear.com/image/cache/catalog/collect_goods_img/Funny-DIY-Toys-Baby-Kid-Car-Toy-Colorful-Gran-Torino-Car-Puzzle-Toys-Assembly-Early-Educational-1-800x800.jpg"
+        },
+        {
+            "id": "2",
+            "brand": "opel",
+            "model": "žopel",
+            "year": "2000",
+            "fuelTypes": "petrol",
+            "price": {
+                "amount": 600,
+                "currency": "€"
+            },
+            "imgSrc": "https://m.media-amazon.com/images/I/71VEtPLgBxL._AC_SX569_.jpg"
+        },
+        {
+            "id": "3",
+            "brand": "opel",
+            "model": "žopel",
+            "year": "2000",
+            "fuelTypes": "gas",
+            "price": {
+                "amount": 600,
+                "currency": "€"
+            },
+            "imgSrc": "https://m.media-amazon.com/images/I/81hP8+B1rHL._AC_SX425_.jpg"
+        },
+        {
+            "id": "3",
+            "brand": "opel",
+            "model": "žopel",
+            "year": "2000",
+            "fuelTypes": "dysel",
+            "price": {
+                "amount": 600,
+                "currency": "€"
+            },
+            "imgSrc": "https://m.media-amazon.com/images/I/81hP8+B1rHL._AC_SX425_.jpg"
+        },
+        {
+            "id": "3",
+            "brand": "opel",
+            "model": "žopel",
+            "year": "2000",
+            "fuelTypes": "hybrid",
+            "price": {
+                "amount": 600,
+                "currency": "€"
+            },
+            "imgSrc": "https://m.media-amazon.com/images/I/81hP8+B1rHL._AC_SX425_.jpg"
+        }
+    ]
+}
