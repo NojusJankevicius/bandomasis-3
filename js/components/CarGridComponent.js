@@ -14,38 +14,43 @@ class FurnitureGridComponent {
         this.render()
     }
 
+    deleteCar = id => API.deleteCar(id, this.fetchCars, this.showError)
+
+    fetchCars = () => API.getCars(this.saveData, this.showError);
     showError = err => console.error(err);
 
+    wrapChild = element => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'col-12 col-sm-6 col-lg-4 col-xl-3 align-self-stretch';
+        wrapper.append(element);
+        return wrapper;
+      }
+    
     init = () => {
-        API.getCars(this.saveData, this.showError)
+        this.state.loading = true;
+        this.fetchCars()
+        this.htmlElement = document.createElement('div');
+        this.htmlElement.className = 'row g-3';
+
         this.render();
     }
 
     render = () => {
-        if (this.state.cars.length === 0) {
+        const { loading, cars } = this.state;
+        if (loading) {
           this.htmlElement.innerHTML = `<div class="text-center"><img src="assets/loading.gif" /></div>`;
+        } else if(cars.length > 0){
+          this.htmlElement.innerHTML = '';
+          const children = cars
+          .map(({ id, ...carProps }) => new CarCardComponent({
+            ...carProps,
+            onDelete: () => this.deleteCar(id)
+          }))
+          .map(x => x.htmlElement)
+          .map(this.wrapChild);
+        this.htmlElement.append(...children); 
         } else {
-          this.htmlElement.innerHTML = `        <div class="card card shadow position-relative">
-          <img src="https://m.media-amazon.com/images/I/71VEtPLgBxL._AC_SX569_.jpg"  height="300px" class="card-img-top">
-          <div class="card-body ">
-              <h5 class="card-title">opel žopel</h5>
-              <div>
-                  <span>Year:</span>
-                  2000
-              </div>
-              <div>
-                  <span>Fuel type:</span>
-                  gas
-              </div>
-              <div>
-                  <span>Price:</span>
-                  600
-              </div>
-              <button class="btn btn-danger btn-sm position-absolute top-0 end-0 mt-2 me-2">✕</button>
-          </div>
-      </div>
-`
-
+            this.htmlElement.innerHTML = 'Sorry, no items at this moment';
         }
     }
 }
