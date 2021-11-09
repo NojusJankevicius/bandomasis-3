@@ -18,10 +18,10 @@ class API {
   }
 }
 
-API.getCars(
-  (duomenys) => console.log('gavau duomenis', duomenys), // success
-  (klaida) => console.error('klaida!!!!', klaida) // failure
-)
+// API.getCars(
+//   (duomenys) => console.log('gavau duomenis', duomenys), // success
+//   (klaida) => console.error('klaida!!!!', klaida) // failure
+// )
 
 
 // API.deleteCar(
