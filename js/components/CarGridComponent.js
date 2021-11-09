@@ -23,9 +23,9 @@ class FurnitureGridComponent {
 
     render = () => {
         if (this.state.cars.length === 0) {
-          this.htmlElement.innerHTML = '<div class="text-center"><img src="assets/loading.gif" /></div>';
+          this.htmlElement.innerHTML = `<div class="text-center">siunčiama...</div>`;
         } else {
-          this.htmlElement.innerHTML = JSON.stringify(this.state.cars);
+          this.htmlElement.innerHTML = `<div class="text-center">parsiųsta!</div>`
 
         }
     }
